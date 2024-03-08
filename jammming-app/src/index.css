@@ -1,68 +1,142 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  --pink-default: rgb(255, 166, 249);
+  --purple-default:  rgb(105, 46, 182);
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+/* main page styles */
 
 body {
+  background-image: url('./assets/top-view-headset-pink-background.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+  background-color: rgb(184, 107, 255);
+  color: white;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.site-head {
+  background-color: var(--purple-default);
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  padding: 1rem;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  font-family: 'Protest Strike', sans-serif;
+  font-size: xx-large;
+  color: rgb(255, 255, 255);
+
+}
+
+.emphasis {
+  color: var(--pink-default);
+}
+
+.title,
+.emphasis {
+  text-align: center;
+}
+
+.userStyle {
+  display: flex;
+  align-self: center;
+  justify-self: flex-end;
+}
+
+/* font */
+.protest-strike-regular {
+  font-family: "Protest Strike", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* style for search input and button */
+#search {
+  display: flex;
+  margin-top: 3rem;
+  justify-content: center;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  display: flex;
+  background-color: var(--purple-default);
+  color: white;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 1.3rem;
+  border: none;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+input {
+  width: 150%;
+  height: 3rem;
+  border-radius: 1rem;
+  border: 1px var(--purple-default) solid;
+  margin-bottom: 1rem;
+  display: flex;
+  text-align: center;
+}
+
+#centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+/* style for results and playlist */
+
+.container {
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+}
+
+#results {
+width: 40vw;
+height: 60vh;
+background-color: var(--purple-default);
+overflow-y: auto;
+}
+
+#new-playlist {
+width: 40vw;
+background-color: var(--purple-default);
+overflow-y: scroll;
+height: 60vh;
+}
+
+h1 {
+text-align: left;
+}
+
+hr {
+  width: 90%;
+}
+
+#special {
+background-color: var(--pink-default);
+}
+
+#results::-webkit-scrollbar, #new-playlist::-webkit-scrollbar {
+  background-color: var(--purple-default);
+}
+
+#results::-webkit-scrollbar-button, #new-playlist::-webkit-scrollbar-thumb {
+  background-color: var(--pink-default);
+}
+
+/* specific elements for playlist styles */
+
+#playlist-styles {
+  padding: 1rem;
 }
