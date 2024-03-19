@@ -1,4 +1,6 @@
 import { Playlist } from './components/Playlist'
+import { SearchBar } from './components/SearchBar'
+import { SearchResults } from './components/SearchResults'
 import './index.css'
 
 function App() {
@@ -11,6 +13,7 @@ function App() {
         </div>
       </section>
       <section id="search">
+        <SearchBar />
       </section>
 
       <div className="container">
@@ -18,6 +21,7 @@ function App() {
           <div id="centered">
             <h1>Results</h1>
             <hr />
+            {/* <SearchResults /> */}
           </div>
         </section >
 
