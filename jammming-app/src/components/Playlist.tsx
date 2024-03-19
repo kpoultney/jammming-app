@@ -1,15 +1,24 @@
-//these components should be static and may contain mock data. At this point, you should focus on how your components will interact with the data rather than on how they will retrieve data from APIs (that comes in a later task). Remember to build reusable components and keep them small.
-
 import '../index.css'
+import { bedtimePlaylist } from './Fake Data/BedtimePlaylist';
 
 export function Playlist() {
-    
 
-    return (
-        <>
+  function savePlaylist(): string[] {
+    const playlistNames: string[] = [];
+
+    for (let i = 0; i < bedtimePlaylist.length; i++) {
+      playlistNames.push(bedtimePlaylist[i].name);
+    }
+
+    console.log(playlistNames);
+    return playlistNames;
+  }
+
+  return (
+    <>
       <div id="playlist-styles">
-        <button id="special">Save to Spotify</button>
-        </div>
-        </>
-    )
+        <button id="special" onClick={() => savePlaylist()}>Save to Spotify</button>
+      </div>
+    </>
+  )
 }
