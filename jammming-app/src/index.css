@@ -59,8 +59,9 @@ body {
 
 /* style for search input and button */
 #search {
+  width: 100%;
   display: flex;
-  margin-top: 3rem;
+  margin-top: 1rem;
   justify-content: center;
 }
 
@@ -73,11 +74,11 @@ button {
   border-radius: 1.3rem;
   border: none;
   text-transform: uppercase;
+  font-weight: 700;
   cursor: pointer;
 }
 
 input {
-  width: 150%;
   height: 3rem;
   border-radius: 1rem;
   border: 1px var(--purple-default) solid;
@@ -125,6 +126,8 @@ hr {
 
 #special {
 background-color: var(--pink-default);
+align-items: center;
+justify-content: center;
 }
 
 #results::-webkit-scrollbar, #new-playlist::-webkit-scrollbar {
@@ -138,6 +141,23 @@ background-color: var(--pink-default);
 /* specific elements for playlist styles */
 
 #playlist-styles {
+  width: 50%;
   padding: 1rem;
   display: flex;
+  flex-direction: column;
+}
+
+/* specific styles for track listing */
+
+#track-information:nth-child(odd) {
+background-color: white;
+color: var(--purple-default);
+}
+
+#track {
+display: flex;
+}
+
+#track-information {
+  flex-direction: row;
 }

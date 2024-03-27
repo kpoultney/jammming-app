@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import { useCallback } from "react";
 
 const Track = (props: any) => {
     const addTrack = useCallback(
@@ -31,8 +31,8 @@ const Track = (props: any) => {
     };
 
     return (
-        <div className="Track">
-            <div className="Track-information">
+        <div id="Track">
+            <div id="Track-information">
                 <h3>{props.track.name}</h3>
                 <p>
                     {props.track.artist} | {props.track.album}

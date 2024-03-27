@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import { useCallback, useState } from "react";
 
 export function SearchBar(props: any) {
     const [searchTerm, setSearchTerm] = useState("");

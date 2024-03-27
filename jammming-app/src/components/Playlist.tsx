@@ -14,7 +14,7 @@ export function Playlist(props: any) {
   return (
     <>
       <div id="playlist-styles">
-        <input onChange={handleNameChange} defaultValue={"New Playlist"} id="centered" />
+        <input onChange={handleNameChange} defaultValue={"New Playlist"} />
         <TrackList
           tracks={props.playlistTracks}
           isRemoval={true}

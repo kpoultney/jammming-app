@@ -2,6 +2,7 @@ import { useCallback, useState } from 'react';
 import { Playlist } from './components/Playlist'
 import { SearchBar } from './components/SearchBar'
 import SearchResults from './components/SearchResults';
+import { Spotify } from './util/Spotify';
 import './index.css'
 
 const App = () => {
