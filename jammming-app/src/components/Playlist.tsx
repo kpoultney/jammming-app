@@ -1,23 +1,26 @@
+import { useCallback } from 'react';
 import '../index.css'
-import { bedtimePlaylist } from './Fake Data/BedtimePlaylist';
+import TrackList from './Tracklist';
 
-export function Playlist() {
+export function Playlist(props: any) {
 
-  function savePlaylist(): string[] {
-    const playlistNames: string[] = [];
-
-    for (let i = 0; i < bedtimePlaylist.length; i++) {
-      playlistNames.push(bedtimePlaylist[i].name);
-    }
-
-    console.log(playlistNames);
-    return playlistNames;
-  }
+  const handleNameChange = useCallback(
+    (event: any) => {
+      props.onNameChange(event.target.value);
+    },
+    [props.onNameChange]
+  );
 
   return (
     <>
       <div id="playlist-styles">
-        <button id="special" onClick={() => savePlaylist()}>Save to Spotify</button>
+        <input onChange={handleNameChange} defaultValue={"New Playlist"} id="centered" />
+        <TrackList
+          tracks={props.playlistTracks}
+          isRemoval={true}
+          onRemove={props.onRemove}
+        />
+        <button id="special" onClick={props.onSave}>Save to Spotify</button>
       </div>
     </>
   )

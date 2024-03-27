@@ -1,1 +1,46 @@
-//these components should be static and may contain mock data. At this point, you should focus on how your components will interact with the data rather than on how they will retrieve data from APIs (that comes in a later task). Remember to build reusable components and keep them small.
+import React, { useCallback } from "react";
+
+const Track = (props: any) => {
+    const addTrack = useCallback(
+        (event: any) => {
+            props.onAdd(props.track);
+        },
+        [props.onAdd, props.track]
+    );
+
+    const removeTrack = useCallback(
+        (event: any) => {
+            props.onRemove(props.track);
+        },
+        [props.onRemove, props.track]
+    );
+
+    const renderAction = () => {
+        if (props.isRemoval) {
+            return (
+                <button className="Track-action" onClick={removeTrack}>
+                    -
+                </button>
+            );
+        }
+        return (
+            <button className="Track-action" onClick={addTrack}>
+                +
+            </button>
+        );
+    };
+
+    return (
+        <div className="Track">
+            <div className="Track-information">
+                <h3>{props.track.name}</h3>
+                <p>
+                    {props.track.artist} | {props.track.album}
+                </p>
+            </div>
+            {renderAction()}
+        </div>
+    )
+}
+
+export default Track;

@@ -139,4 +139,5 @@ background-color: var(--pink-default);
 
 #playlist-styles {
   padding: 1rem;
+  display: flex;
 }
